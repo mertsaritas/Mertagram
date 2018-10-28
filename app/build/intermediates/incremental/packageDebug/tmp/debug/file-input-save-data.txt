@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Oct 28 23:36:59 EET 2018
+#Mon Oct 29 00:34:55 EET 2018
 1.base=C\:\\Users\\Mert\\Desktop\\Mertagram\\app\\build\\intermediates\\assets\\debug
 0.baseType=DIRECTORY
 1.baseType=DIRECTORY
@@ -7,5 +7,5 @@ count=2
 1.set=ASSET
 0.path=classes.dex
 0.set=DEX
-0.base=C\:\\Users\\Mert\\Desktop\\Mertagram\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+0.base=C\:\\Users\\Mert\\Desktop\\Mertagram\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\17
 1.path=crashlytics-build.properties

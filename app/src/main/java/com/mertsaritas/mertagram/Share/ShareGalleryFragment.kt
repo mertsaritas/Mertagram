@@ -5,7 +5,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.support.v4.app.Fragment
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +12,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 
 import com.mertsaritas.mertagram.R
-import com.mertsaritas.mertagram.utils.Dosyaİslemleri
+import com.mertsaritas.mertagram.utils.DosyaIslemleri
 import com.mertsaritas.mertagram.utils.ShareActivityGridViewAdapter
 import com.mertsaritas.mertagram.utils.UniversalImageLoader
 import kotlinx.android.synthetic.main.fragment_share_gallery.*
@@ -36,7 +35,7 @@ class ShareGalleryFragment : Fragment() {
         var indirilenResimler = root + "/Download"
         var whatsappResimler = root + "/Whatsapp/Media/Whatsapp Images"
 
-//bi sıkıntı yok sadece commit etmedin diye kırmızı gorunuyo onu etmeye çalıştığımda gözükmüyor
+//bi sıkıntı yok sadece commit etmedin diye kırmızı g
         klasorPath.add(kameraResimleri)
         klasorPath.add(indirilenResimler)
         klasorPath.add(whatsappResimler)
@@ -50,14 +49,16 @@ class ShareGalleryFragment : Fragment() {
 
         view.spnKlasorAdlari.adapter = spinnerArrayAdapter
 
+        view.spnKlasorAdlari.setSelection(0)
+
         view.spnKlasorAdlari.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onNothingSelected(p0: AdapterView<*>?) {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
 
             }
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
 
-                setupGridView(Dosyaİslemleri.klasordekiDosylariGetir(klasorPath.get(position)))
+                setupGridView(DosyaIslemleri.klasordekiDosylariGetir(klasorPath.get(position)))
 
 
             }
@@ -74,6 +75,7 @@ class ShareGalleryFragment : Fragment() {
 
         gridResimler.adapter = gridAdapter
 
+        resimVeyaVideoGoster(secilenKlasordekiDosyalar.get(0))
         gridResimler.setOnItemClickListener(object : AdapterView.OnItemClickListener {
             override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 resimVeyaVideoGoster(secilenKlasordekiDosyalar.get(position))
@@ -85,24 +87,25 @@ class ShareGalleryFragment : Fragment() {
     }
 
     private fun resimVeyaVideoGoster(dosyaYolu: String) {
+
         var dosyaTuru=dosyaYolu.substring(dosyaYolu.lastIndexOf("."))
-        if(dosyaTuru!= null)   {
-            if (dosyaTuru!=null && dosyaTuru.equals("mp4")){
+        //file://asdsadasdas.mp4
+
+
+        if(dosyaTuru != null){
+            if(dosyaTuru.equals(".mp4")){
 
                 videoView.visibility=View.VISIBLE
                 imgCropView.visibility=View.GONE
-
-                videoView.setVideoURI(Uri.parse(dosyaTuru))
+                videoView.setVideoURI(Uri.parse("file://"+dosyaYolu))
+                //Log.e("HATA","Video : "+"file://"+dosyaYolu)
                 videoView.start()
 
+            }else {
+                videoView.visibility=View.GONE
+                imgCropView.visibility=View.VISIBLE
+                UniversalImageLoader.setImage(dosyaYolu,imgCropView,null,"file://")
         }
-
-
-
-        }else {
-            videoView.visibility=View.GONE
-            imgCropView.visibility=View.VISIBLE
-            UniversalImageLoader.setImage(dosyaYolu,imgCropView,null,"file:/")
 
         }
 
