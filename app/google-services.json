@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "618730941724",
+    "firebase_url": "https://mertagram-9c361.firebaseio.com",
+    "project_id": "mertagram-9c361",
+    "storage_bucket": "mertagram-9c361.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:618730941724:android:24a04914fcf67caf",
+        "android_client_info": {
+          "package_name": "com.mertsaritas.mertagram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "618730941724-74avjc0oikhqsvn4cs2joobqmrtapapa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mertsaritas.mertagram",
+            "certificate_hash": "9c9be1324d37e50fff3711caccb260d1b06b7ef5"
+          }
+        },
+        {
+          "client_id": "618730941724-8bko2ltc44l7l4bj703o8umlet2dqge6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZGyifmI_5NKQMe3WIQVrj5kBvU_qn40M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "618730941724-8bko2ltc44l7l4bj703o8umlet2dqge6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
