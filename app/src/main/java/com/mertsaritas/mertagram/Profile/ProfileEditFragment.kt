@@ -43,7 +43,7 @@ class  ProfileEditFragment : Fragment() {
     lateinit var mStorageRef: StorageReference
 
     var profilepictureUri:Uri?=null
-    val RESİM_SEC=100
+    val RESIM_SEC=100
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view=inflater.inflate(R.layout.fragment_profile_edit,container,false)
@@ -62,10 +62,15 @@ class  ProfileEditFragment : Fragment() {
             activity!!.onBackPressed()
         }
         view.tvFotografiDegistir.setOnClickListener {
-            var intent= Intent()
-            intent.setType("image/+")
+
+            var intent = Intent()
+
+            intent.setType("image/*")
+
             intent.setAction(Intent.ACTION_PICK)
-            startActivityForResult(intent,RESİM_SEC)
+
+            startActivityForResult(intent, RESIM_SEC)
+
         }
 
         view.imgBtnDegisiklikleriKaydet.setOnClickListener {
@@ -180,7 +185,7 @@ class  ProfileEditFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode==RESİM_SEC && resultCode==AppCompatActivity.RESULT_OK && data!!.data != null) {
+        if (requestCode==RESIM_SEC && resultCode==AppCompatActivity.RESULT_OK && data!!.data != null) {
             profilepictureUri =data!!.data!!
 
             circleProfileImage.setImageURI(profilepictureUri)

@@ -6,22 +6,22 @@
     density="420dpi"
     format="10"
     plugin-version="3.1.4"
-    timestamp="1540760933511"
+    timestamp="1540799068080"
     token="5461601008584563420"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="654" />
+        duration="1008" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="2723" />
+        duration="3180" />
     <task
         name="verifier"
-        duration="2857" />
+        duration="15043" />
 
     <artifact
         location="C:\Users\Mert\Desktop\Mertagram\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
@@ -30,22 +30,22 @@
         location="C:\Users\Mert\Desktop\Mertagram\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\Mert\Desktop\Mertagram\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-        type="SPLIT" />
-    <artifact
         location="C:\Users\Mert\Desktop\Mertagram\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
         type="SPLIT" />
     <artifact
         location="C:\Users\Mert\Desktop\Mertagram\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\Mert\Desktop\Mertagram\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+        location="C:\Users\Mert\Desktop\Mertagram\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
         type="SPLIT" />
     <artifact
         location="C:\Users\Mert\Desktop\Mertagram\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
         type="SPLIT" />
     <artifact
         location="C:\Users\Mert\Desktop\Mertagram\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Mert\Desktop\Mertagram\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
         type="SPLIT" />
     <artifact
         location="C:\Users\Mert\Desktop\Mertagram\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
@@ -65,7 +65,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1540760933511"
+        timestamp="1540799068080"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\Mert\Desktop\Mertagram\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
@@ -74,22 +74,22 @@
             location="C:\Users\Mert\Desktop\Mertagram\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Mert\Desktop\Mertagram\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
-        <artifact
             location="C:\Users\Mert\Desktop\Mertagram\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Mert\Desktop\Mertagram\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Mert\Desktop\Mertagram\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            location="C:\Users\Mert\Desktop\Mertagram\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Mert\Desktop\Mertagram\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Mert\Desktop\Mertagram\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Mert\Desktop\Mertagram\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Mert\Desktop\Mertagram\app\build\intermediates\split-apk\debug\slices\slice_6.apk"

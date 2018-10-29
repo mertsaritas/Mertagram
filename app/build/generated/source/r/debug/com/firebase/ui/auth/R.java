@@ -1142,18 +1142,18 @@ public final class R {
         public static final int transition_scene_layoutid_cache = 0x7f080140;
         public static final int transition_transform = 0x7f080141;
         public static final int trouble_signing_in = 0x7f080142;
-        public static final int uniform = 0x7f080154;
-        public static final int up = 0x7f080155;
-        public static final int useLogo = 0x7f080156;
-        public static final int view_offset_helper = 0x7f08015c;
-        public static final int visible = 0x7f08015d;
-        public static final int welcome_back_idp_button = 0x7f08015e;
-        public static final int welcome_back_idp_prompt = 0x7f08015f;
-        public static final int welcome_back_password_body = 0x7f080160;
-        public static final int wide = 0x7f080161;
-        public static final int withText = 0x7f080162;
-        public static final int wrap = 0x7f080163;
-        public static final int wrap_content = 0x7f080164;
+        public static final int uniform = 0x7f080155;
+        public static final int up = 0x7f080156;
+        public static final int useLogo = 0x7f080157;
+        public static final int view_offset_helper = 0x7f08015d;
+        public static final int visible = 0x7f08015e;
+        public static final int welcome_back_idp_button = 0x7f08015f;
+        public static final int welcome_back_idp_prompt = 0x7f080160;
+        public static final int welcome_back_password_body = 0x7f080161;
+        public static final int wide = 0x7f080162;
+        public static final int withText = 0x7f080163;
+        public static final int wrap = 0x7f080164;
+        public static final int wrap_content = 0x7f080165;
     }
     public static final class integer {
         public static final int abc_config_activityDefaultDur = 0x7f090000;

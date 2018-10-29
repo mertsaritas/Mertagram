@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Oct 29 00:34:55 EET 2018
+#Mon Oct 29 11:49:10 EET 2018
 1.base=C\:\\Users\\Mert\\Desktop\\Mertagram\\app\\build\\intermediates\\assets\\debug
 0.baseType=DIRECTORY
 1.baseType=DIRECTORY

@@ -12,7 +12,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 
 import com.mertsaritas.mertagram.R
-import com.mertsaritas.mertagram.utils.DosyaIslemleri
+import com.mertsaritas.mertagram.utils.Dosyaİslemleri
 import com.mertsaritas.mertagram.utils.ShareActivityGridViewAdapter
 import com.mertsaritas.mertagram.utils.UniversalImageLoader
 import kotlinx.android.synthetic.main.fragment_share_gallery.*
@@ -31,14 +31,14 @@ class ShareGalleryFragment : Fragment() {
 
         var root = Environment.getExternalStorageDirectory().path
 
-        var kameraResimleri = root + "/DCIM/Camera"
-        var indirilenResimler = root + "/Download"
-        var whatsappResimler = root + "/Whatsapp/Media/Whatsapp Images"
+        var kameraResimleri= root+"/DCIM/Camera"
+        var indirilenResimler=root+"/Download"
+        var whatsappResimleri=root+"/WhatsApp/Media/WhatsApp Images"
 
 //bi sıkıntı yok sadece commit etmedin diye kırmızı g
         klasorPath.add(kameraResimleri)
         klasorPath.add(indirilenResimler)
-        klasorPath.add(whatsappResimler)
+        klasorPath.add(whatsappResimleri)
 
         klasorAdlari.add("Kamera")
         klasorAdlari.add("İndirilenler")
@@ -58,7 +58,7 @@ class ShareGalleryFragment : Fragment() {
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
 
-                setupGridView(DosyaIslemleri.klasordekiDosylariGetir(klasorPath.get(position)))
+                setupGridView(Dosyaİslemleri.klasordekiDosylariGetir(klasorPath.get(position)))
 
 
             }
@@ -98,7 +98,6 @@ class ShareGalleryFragment : Fragment() {
                 videoView.visibility=View.VISIBLE
                 imgCropView.visibility=View.GONE
                 videoView.setVideoURI(Uri.parse("file://"+dosyaYolu))
-                //Log.e("HATA","Video : "+"file://"+dosyaYolu)
                 videoView.start()
 
             }else {

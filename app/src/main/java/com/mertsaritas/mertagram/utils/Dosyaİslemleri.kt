@@ -40,7 +40,7 @@ class Dosyaİslemleri {
                         var okunanDosyaYolu=klasordekiTumDosyalar[i].absolutePath
                         var dosyaTuru=okunanDosyaYolu.substring(okunanDosyaYolu.lastIndexOf("."))
 
-                        if(dosyaTuru.equals(".jpg")|| dosyaTuru.equals(".jpeg")|| dosyaTuru.equals(".png")|| dosyaTuru.equals(".mp4")){
+                        if(dosyaTuru!=null && (dosyaTuru.equals(".jpg")|| dosyaTuru.equals(".jpeg")|| dosyaTuru.equals(".png")|| dosyaTuru.equals(".mp4"))){
 
                             tumDosyalar.add(okunanDosyaYolu)
 
