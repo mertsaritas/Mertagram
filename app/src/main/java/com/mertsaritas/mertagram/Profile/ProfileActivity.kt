@@ -38,10 +38,12 @@ class ProfileActivity : AppCompatActivity() {
 
 
         setupToolbar()
-        setupNavigationView()
+
         kullaniciBilgileriniGetir()
-        setupProfilePhoto()
+
     }
+
+
 
     private fun kullaniciBilgileriniGetir() {
         tvProfileDüzenleButton.isEnabled=false
@@ -103,11 +105,6 @@ class ProfileActivity : AppCompatActivity() {
         })
     }
 
-    private fun setupProfilePhoto() {
-        val imgUrl="scontent-mxp1-1.xx.fbcdn.net/v/t1.0-9/25348656_2009937472628993_1703520328161869282_n.jpg?_nc_cat=0&oh=3b8a397da73c6cbcd7716133c2e11eb1&oe=5C0BA823"
-        UniversalImageLoader.setImage(imgUrl,circleProfileİmage,progressBar3,"https://")
-    }
-
 
     private fun setupToolbar() {
         imgProfileSettings.setOnClickListener(){
@@ -122,6 +119,11 @@ class ProfileActivity : AppCompatActivity() {
             transaction.addToBackStack("editProfileFragmentEklendi")
             transaction.commit()
         }
+    }
+
+    override fun onResume() {
+        setupNavigationView()
+        super.onResume()
     }
 
     fun setupNavigationView(){

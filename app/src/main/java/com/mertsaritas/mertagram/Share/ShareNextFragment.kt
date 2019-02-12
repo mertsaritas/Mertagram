@@ -2,6 +2,7 @@ package com.mertsaritas.mertagram.Share
 
 
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -22,11 +23,12 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.OnProgressListener
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
+import com.mertsaritas.mertagram.Home.HomeActivity
 import com.mertsaritas.mertagram.Models.Posts
 import com.mertsaritas.mertagram.Profile.YukleniyorFragment
 
 import com.mertsaritas.mertagram.R
-import com.mertsaritas.mertagram.utils.Dosyaİslemleri
+import com.mertsaritas.mertagram.utils.DosyaIslemleri
 import com.mertsaritas.mertagram.utils.EventbusDataEvents
 import com.mertsaritas.mertagram.utils.UniversalImageLoader
 import kotlinx.android.synthetic.main.fragment_share_next.*
@@ -35,14 +37,11 @@ import kotlinx.android.synthetic.main.fragment_yukleniyor.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import java.lang.Exception
-import java.net.URI
 
 class ShareNextFragment : Fragment() {
 
-    var secilenResimYolu: String? = null
-
+    var secilenDosyaYolu: String? = null
     var dosyaTuruResimMi:Boolean? = null
-
     lateinit var photoURI: Uri
 
     lateinit var mAuth: FirebaseAuth
@@ -57,9 +56,9 @@ class ShareNextFragment : Fragment() {
 
         var view = inflater.inflate(R.layout.fragment_share_next, container, false)
 
-        UniversalImageLoader.setImage(secilenResimYolu!!, view!!.imgSecilenResim, null, "file://")
+        UniversalImageLoader.setImage(secilenDosyaYolu!!, view!!.imgSecilenResim, null, "file://")
 
-       // photoURI = Uri.parse("file://" + secilenResimYolu)
+        //photoURI = Uri.parse("file://" + secilenDosyaYolu)
 
         mAuth = FirebaseAuth.getInstance()
         mUser = mAuth.currentUser!!
@@ -68,21 +67,19 @@ class ShareNextFragment : Fragment() {
 
         view.tvIleriButton.setOnClickListener {
 
-            /*var dialogYukleniyor = YukleniyorFragment()
-            dialogYukleniyor.show(activity!!.supportFragmentManager, "yükleniyorFragmenti")
-            dialogYukleniyor.isCancelable = false*/
-
 
             //resim dosyasını sıkıstır
             if (dosyaTuruResimMi == true) {
 
-                Dosyaİslemleri.compressResimDosya(this, secilenResimYolu)
+                DosyaIslemleri.compressResimDosya(this,secilenDosyaYolu)
 
             }
             //video dosyasını sıkıstır
             else if (dosyaTuruResimMi == false) {
 
-                Dosyaİslemleri.compressVideoDosya(this,secilenResimYolu!!)
+                DosyaIslemleri.compressVideoDosya(this,secilenDosyaYolu!!)
+
+
 
             }
 
@@ -90,9 +87,7 @@ class ShareNextFragment : Fragment() {
         }
 
         view.imgClose.setOnClickListener {
-
             this.activity!!.onBackPressed()
-
         }
 
     return view
@@ -106,6 +101,10 @@ class ShareNextFragment : Fragment() {
 
         mRef.child("posts").child(mUser.uid).child(postID.toString()).setValue(yuklenenPost)
         mRef.child("posts").child(mUser.uid).child(postID.toString()).child("yuklenme_tarih").setValue(ServerValue.TIMESTAMP)
+
+
+        var intent =Intent(activity,HomeActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+        startActivity(intent)
     }
 
 
@@ -113,10 +112,8 @@ class ShareNextFragment : Fragment() {
 
         //////////////////////////////////EventBus/////////////////////////////////////
         @Subscribe(sticky = true)
-        internal fun onSecilenResimEvent(secilenResim: EventbusDataEvents.paylasilacakResmiGonder) {
-
-
-            secilenResimYolu = secilenResim!!.resimYolu!!
+        internal fun onSecilenResimEvent(secilenResim: EventbusDataEvents.PaylasilacakResmiGonder) {
+            secilenDosyaYolu = secilenResim!!.dosyaYolu!!
             dosyaTuruResimMi=secilenResim!!.dosyaTuruResimMi
 
 
@@ -133,12 +130,12 @@ class ShareNextFragment : Fragment() {
             EventBus.getDefault().unregister(this)
         }
 
-
     fun uploadStorage(filePath: String?) {
+
 
         var fileUri = Uri.parse("file://"+filePath)
 
-        var dialogYukleniyor = YukleniyorFragment()
+        var dialogYukleniyor = CompressandLoadingFragment()
 
         dialogYukleniyor.show(activity!!.supportFragmentManager, "compressLoadingFragmenti")
         dialogYukleniyor.isCancelable = false
@@ -172,9 +169,8 @@ class ShareNextFragment : Fragment() {
                 })
 
 
+
     }
-
-
 
 }
 

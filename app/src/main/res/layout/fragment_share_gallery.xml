@@ -23,7 +23,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/imgClose"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -40,9 +40,9 @@
                 android:text="İleri"
                 android:textColor="@color/mavi"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+                app:layout_constraintBottom_toBottomOf="@+id/imgClose"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/imageView6" />
+                app:layout_constraintTop_toTopOf="@+id/imgClose" />
 
             <Spinner
                 android:id="@+id/spnKlasorAdlari"
@@ -51,9 +51,9 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView6"
-                app:layout_constraintStart_toEndOf="@+id/imageView6"
-                app:layout_constraintTop_toTopOf="@+id/imageView6" />
+                app:layout_constraintBottom_toBottomOf="@+id/imgClose"
+                app:layout_constraintStart_toEndOf="@+id/imgClose"
+                app:layout_constraintTop_toTopOf="@+id/imgClose" />
 
             <View
                 android:id="@+id/golgelik2"
@@ -87,7 +87,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintHeight_percent="0.7"
-            app:layout_constraintBottom_toTopOf="@+id/gridResimler"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerViewDosyalar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" >
@@ -122,12 +122,11 @@
 
 
 
-        <GridView
-            android:id="@+id/gridResimler"
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewDosyalar"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintHeight_percent="0.3"
-            android:numColumns="4"
             android:gravity="center"
             android:verticalSpacing="1dp"
             android:horizontalSpacing="1dp"

@@ -8,7 +8,7 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.mertsaritas.mertagram"
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 27
         versionCode 6
         versionName "1.0"
@@ -48,6 +48,7 @@ dependencies {
     //runtime permisson
     implementation 'com.karumi:dexter:5.0.0'
     implementation 'com.iceteck.silicompressorr:silicompressor:2.1'
+    implementation 'com.otaliastudios:cameraview:1.5.1'
 
 
 }

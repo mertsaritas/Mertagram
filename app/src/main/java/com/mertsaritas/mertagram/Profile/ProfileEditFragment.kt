@@ -78,7 +78,7 @@ class  ProfileEditFragment : Fragment() {
             if(profilepictureUri!=null){
                 var dialogYukleniyor=YukleniyorFragment()
                 dialogYukleniyor.show(activity!!.supportFragmentManager,"yükleniyorFragmenti")
-
+                
                 dialogYukleniyor.isCancelable=false
 
                 var uploadTask=mStorageRef.child("users").child(gelenkullaniciBilgiler!!.user_id!!).child(profilepictureUri!!.lastPathSegment).putFile(profilepictureUri!!)
